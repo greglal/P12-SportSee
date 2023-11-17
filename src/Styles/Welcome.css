@@ -1,0 +1,12 @@
+.welcome{
+    width: 400px;
+    height: 90px;
+}
+
+h1{
+    font-size: 48px;
+}
+
+.name{
+    color: red;
+}

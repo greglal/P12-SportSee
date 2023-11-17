@@ -1,0 +1,38 @@
+.barChart {
+    margin-top:80px;
+    width: 835px;
+    background-color:#FBFBFB;
+    padding: 15px;
+}
+
+.chart-title {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.chart-title h2{
+    font-size: 15px;
+}
+
+.chart-title ul{
+    width: 277px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    font-size: 24px;
+    margin-top: 8px;
+}
+
+.legend {
+    margin-bottom: 40px;
+}
+
+li span{
+    color: black;
+    font-size: 14px;
+}
+
+.li-1{
+    color: red;
+}

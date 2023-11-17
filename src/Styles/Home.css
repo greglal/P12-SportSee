@@ -1,0 +1,23 @@
+body{
+    margin:0;
+    padding: 0;
+    min-width: 1024px;
+    min-height: 780px;
+    /*background-color: #020203;*/
+}
+
+.homepage{
+    display:flex;
+    flex-direction: row;
+}
+
+.activities{
+    /*width: 1126px;*/
+    width: 80%;
+    min-width: 1080px;
+    /*height: 779px;*/
+    height: 100%;
+    min-height: 780px;
+    /*background-color: pink;*/
+    margin: 50px auto;
+}

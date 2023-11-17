@@ -1,0 +1,27 @@
+.sidebar{
+    width: 117px;
+    min-height: 780px;
+    background-color:#020203;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logos{
+    height: 316px;
+    padding-top: 200px;
+    padding-left: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.copyright{
+    height: 138px;
+    padding-bottom:80px;
+    padding-right: 27%;
+    font-size:12px;
+    writing-mode:vertical-rl;
+    color: #FFFFFF;
+    rotate: 180deg;
+}
