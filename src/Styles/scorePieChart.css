@@ -1,0 +1,12 @@
+.pieChart{
+    width: 230px;
+    height: 230px;
+    background-color: #FBFBFB;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.pieChart h2{
+    margin-left: 20px;
+    font-size:20px;
+}

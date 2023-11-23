@@ -1,18 +1,10 @@
 import {useParams} from "react-router";
-import {
-    BarChart,
-    CartesianGrid,
-    Legend,
-    ResponsiveContainer,
-    Tooltip,
-    XAxis,
-    YAxis,
-    Text
-} from "recharts";
+import {BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis} from "recharts";
 import {useEffect, useState} from "react";
 import hooksInstance from "../../Services/Hooks/hooks";
 import {Bar} from "recharts";
 import '../../Styles/BarChart.css'
+import {getUserActivity} from "../../Services/CallAPi/api";
 
 export default function DailyActivities() {
     const {id} = useParams();
@@ -27,9 +19,8 @@ export default function DailyActivities() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const resActivity = await hooksInstance.GetUserActivity(useId);
-                setActivity(resActivity.data);
-                console.log(resActivity)
+                const userActivity = await getUserActivity(useId);
+                setActivity(userActivity);
             } catch (error) {
                 console.error('Erreur lors de la récupération des données utilisateur:', error)
             }
@@ -53,7 +44,7 @@ export default function DailyActivities() {
 
                     <CartesianGrid vertical={false} strokeDasharray="1 1" />
                     <XAxis dataKey="" tickFormatter={(value) => (value+1).toString()} stroke="1 1" />
-                    <Tooltip />
+                    <Tooltip content={customTooltip}/>
                     <Bar yAxisId="Poids (kg)"
                          dataKey="kilogram"
                          fill="#282D30"
@@ -71,7 +62,17 @@ export default function DailyActivities() {
                 </ResponsiveContainer>
             )}
         </div>
-
     )
+
+    function customTooltip({active, payload}) {
+        if (active && payload) {
+            return (
+                <div className= "barChartTooltip">
+                    <div className="toolTipContent">{`${payload[0].value}kg`}</div>
+                    <div className="toolTipContent">{`${payload[1].value} kCal`}</div>
+                </div>
+            )
+        }
+    }
 
 }

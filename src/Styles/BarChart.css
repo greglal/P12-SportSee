@@ -1,6 +1,6 @@
 .barChart {
     margin-top:80px;
-    width: 835px;
+    width: 900px;
     background-color:#FBFBFB;
     padding: 15px;
 }
@@ -35,4 +35,20 @@ li span{
 
 .li-1{
     color: red;
+}
+
+.barChartTooltip{
+    width: 39px;
+    height: 63px;
+    background-color: #E60000;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    padding: 10px;
+    margin-left: 5px;
+}
+
+.toolTipContent{
+    font-size: 10px;
+    color: #FFFFFF;
 }
