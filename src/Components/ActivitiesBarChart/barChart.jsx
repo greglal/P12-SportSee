@@ -1,7 +1,6 @@
 import {useParams} from "react-router";
-import {BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis} from "recharts";
+import {BarChart, CartesianGrid, Tooltip, XAxis} from "recharts";
 import {useEffect, useState} from "react";
-import hooksInstance from "../../Services/Hooks/hooks";
 import {Bar} from "recharts";
 import '../../Styles/BarChart.css'
 import {getUserActivity} from "../../Services/CallAPi/api";
@@ -39,8 +38,8 @@ export default function DailyActivities() {
             </div>
 
             {activity && (
-                <ResponsiveContainer width={835} height={250}>
-                <BarChart data={activity.data.sessions}>
+                <BarChart data={activity.data.sessions}
+                          width={835} height={250}>
 
                     <CartesianGrid vertical={false} strokeDasharray="1 1" />
                     <XAxis dataKey="" tickFormatter={(value) => (value+1).toString()} stroke="1 1" />
@@ -59,11 +58,17 @@ export default function DailyActivities() {
                          className = "custom-bar"/>
 
                 </BarChart>
-                </ResponsiveContainer>
             )}
         </div>
     )
 
+    /**
+     * custom tooltip with on weight in kg and calories in kCal
+     *
+     * @param active
+     * @param payload
+     * @returns {JSX.Element}
+     */
     function customTooltip({active, payload}) {
         if (active && payload) {
             return (

@@ -1,0 +1,20 @@
+.error {
+    width: 900px;
+    height: 800px;
+    margin: auto;
+}
+
+.code-error{
+    font-size: 92px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.oups{
+    text-align: center;
+}
+
+.return-home{
+    text-align:center;
+    margin-top: 80px;
+}

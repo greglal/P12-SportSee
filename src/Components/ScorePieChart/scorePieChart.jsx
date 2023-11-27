@@ -1,19 +1,22 @@
 import {useParams} from "react-router";
 import {useEffect, useState} from "react";
-import hooksInstance from "../../Services/Hooks/hooks";
 import {getUserInfo} from "../../Services/CallAPi/api"
 import "../../Styles/scorePieChart.css";
-import {
-    RadialBarChart,
-    RadialBar,
-} from "recharts";
+import {RadialBarChart, RadialBar,} from "recharts";
 
+/**
+ * Pie chart for user's score (% of objective)
+ *
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export default function ScoreChart() {
     const {id} = useParams();
     const useId = Number(id);
 
     // state declaration
     const [user, setUser] = useState(null);
+    const [score, setScore] = useState(0);
 
     /**
      * get user's infos
@@ -23,12 +26,16 @@ export default function ScoreChart() {
             try {
                 const userInfo = await getUserInfo(useId);
                 setUser(userInfo);
+                setScore(userInfo.data.todayScore || userInfo.data.score);
             } catch (error) {
                 console.error('Erreur lors de la récupération des données utilisateur:', error)
             }
         };
         fetchData();
     }, [useId]);
+
+
+
 
     return (
         <div className= "pieChart">
@@ -38,7 +45,7 @@ export default function ScoreChart() {
                                 height={180}
                                 innerRadius="90%"
                                 outerRadius="100%"
-                                data={[{ score: user.data.score * 100 }]}
+                                data={[{score: score * 100}]}
                                 startAngle={90}
                                 endAngle={210}
                                 fill='#E60000'
@@ -57,7 +64,7 @@ export default function ScoreChart() {
                         fontSize={18}
                         fontWeight="bold"
                     >
-                        <tspan>{`${user.data.score * 100}% `}</tspan>
+                        <tspan>{`${(score * 100)}% `}</tspan>
                         <tspan x={120}
                                y={80}
                                fontSize={16}

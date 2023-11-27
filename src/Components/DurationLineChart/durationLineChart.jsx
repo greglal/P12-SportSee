@@ -1,14 +1,15 @@
 import {useParams} from "react-router";
 import {useEffect, useState} from "react";
 import "../../Styles/durationLineChart.css";
-import {
-    Line,
-    LineChart,
-    Tooltip,
-    XAxis
-} from "recharts";
+import {Line, LineChart, Tooltip, XAxis} from "recharts";
 import {getUserAverageSessions} from "../../Services/CallAPi/api";
 
+/**
+ * Line chart with average time sessions
+ *
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export default function AverageSession() {
     const {id} = useParams();
     const useId = Number(id);
@@ -62,6 +63,13 @@ export default function AverageSession() {
         </div>
     )
 
+    /**
+     * custom tooltip with average time session in minutes
+     *
+     * @param active
+     * @param payload
+     * @returns {JSX.Element}
+     */
     function customLineTooltip({active, payload}) {
         if (active && payload) {
             return (

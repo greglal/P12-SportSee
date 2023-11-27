@@ -1,5 +1,4 @@
 import axios from "axios"
-import {useParams} from "react-router";
 
 const base_URL =`http://localhost:3000`
 

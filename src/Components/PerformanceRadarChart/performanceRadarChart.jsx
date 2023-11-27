@@ -1,14 +1,15 @@
 import {useParams} from "react-router";
 import {useEffect, useState} from "react";
 import "../../Styles/performanceRadarChart.css";
-import {
-    PolarAngleAxis,
-    PolarGrid,
-    Radar,
-    RadarChart
-} from "recharts";
+import {PolarAngleAxis, PolarGrid, Radar, RadarChart} from "recharts";
 import {getUserPerformance} from "../../Services/CallAPi/api";
 
+/**
+ * Radar Chart for user session, by performance
+ *
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export default function PerformanceChart() {
     const {id} = useParams();
     const useId = Number(id);

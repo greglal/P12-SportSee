@@ -3,6 +3,12 @@ import {useParams} from "react-router";
 import {useState, useEffect} from "react"
 import hooksInstance from "../../Services/Hooks/hooks";
 
+/**
+ * welcome sentence with user's name display
+ *
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export default function Welcome () {
 
     const {id} = useParams();

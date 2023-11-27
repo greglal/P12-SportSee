@@ -1,0 +1,32 @@
+.counter{
+    margin-left: 50px;
+    width: 260px;
+    height: 124px;
+    display: flex;
+    flex-direction: row;
+    background-color:#FBFBFB;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.counter-icone{
+    width: 60px;
+    height: 60px;
+}
+
+.counter-content{
+    margin-left: 20px;
+    margin-top: 10px;
+
+}
+
+.counter-cat{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.counter-unit{
+    color: #74798C;
+}
+

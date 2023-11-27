@@ -3,7 +3,6 @@ body{
     padding: 0;
     min-width: 1024px;
     min-height: 780px;
-    /*background-color: #020203;*/
 }
 
 .homepage{
@@ -12,13 +11,10 @@ body{
 }
 
 .activities{
-    /*width: 1126px;*/
     width: 80%;
     min-width: 1080px;
-    /*height: 779px;*/
     height: 100%;
     min-height: 780px;
-    /*background-color: pink;*/
     margin: 20px auto;
 }
 
@@ -27,4 +23,17 @@ body{
     display: flex;
     flex-direction: row;
     justify-content:space-between;
+}
+
+.infos{
+    display: flex;
+    flex-direction: row;
+}
+
+.counters{
+    height: 600px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
