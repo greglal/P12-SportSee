@@ -1,7 +1,7 @@
 import '../../Styles/Welcome.css'
 import {useParams} from "react-router";
 import {useState, useEffect} from "react"
-import hooksInstance from "../../Services/Hooks/hooks";
+import {getUserInfo} from "../../Services/CallAPi/api";
 
 /**
  * welcome sentence with user's name display
@@ -23,14 +23,15 @@ export default function Welcome () {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const resUser = await hooksInstance.GetUserInfos(useId);
-                setUser(resUser.data);
+                const resUser = await getUserInfo(useId);
+                setUser(resUser);
             } catch (error) {
                 console.error('Erreur lors de la récupération des données utilisateur:', error)
             }
         };
         fetchData();
     }, [useId]);
+
 
     return (
         <div className="welcome">

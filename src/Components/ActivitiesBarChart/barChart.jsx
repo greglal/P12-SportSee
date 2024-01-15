@@ -56,7 +56,6 @@ export default function DailyActivities() {
                          barSize={10}
                          radius={[50, 50, 0,0]}
                          className = "custom-bar"/>
-
                 </BarChart>
             )}
         </div>

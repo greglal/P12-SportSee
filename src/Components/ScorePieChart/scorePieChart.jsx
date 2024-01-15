@@ -40,14 +40,14 @@ export default function ScoreChart() {
     return (
         <div className= "pieChart">
             <h2>Score</h2>
-            {user &&
+            {score &&
                 <RadialBarChart width={250}
                                 height={180}
                                 innerRadius="90%"
                                 outerRadius="100%"
-                                data={[{score: score * 100}]}
+                                data={[{score: score}]}
                                 startAngle={90}
-                                endAngle={210}
+                                endAngle={90 + (score * 360)}
                                 fill='#E60000'
                 >
                     <RadialBar minAngle={15}
