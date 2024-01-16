@@ -1,0 +1,6 @@
+.userToSelect{
+    width : 60%;
+    margin: 80px auto;
+    display: flex;
+    justify-content:space-between;
+}

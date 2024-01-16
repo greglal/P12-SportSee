@@ -12,10 +12,10 @@ export default function Header() {
     return (
         <div className='navbar'>
             <img src={logo} alt="logo SportSee" className="logo"/>
-            <Link to="/12" className="navbar-link">Accueil</Link>
-            <Link to="/12" className="navbar-link">Profil</Link>
-            <Link to="/12" className="navbar-link">Réglages</Link>
-            <Link to="/12" className="navbar-link">Communauté</Link>
+            <Link to="/" className="navbar-link">Accueil</Link>
+            <Link to="/" className="navbar-link">Profil</Link>
+            <Link to="/" className="navbar-link">Réglages</Link>
+            <Link to="/" className="navbar-link">Communauté</Link>
         </div>
     )
 }

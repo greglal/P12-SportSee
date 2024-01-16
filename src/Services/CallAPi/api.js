@@ -1,9 +1,10 @@
 import hooksInstance from "../../Services/Hooks/hooks";
 import mockedDatas from "../Mock/mockedData";
+import {isMock} from "../../Pages/UserChoice";
 
 
 // use mocked data
-const USE_MOCK = false;
+// const isMock = false;
 
 /**
  * call function to get user's average time session
@@ -13,12 +14,14 @@ const USE_MOCK = false;
  */
 export const getUserAverageSessions = async (userId) => {
     try {
-        if(USE_MOCK){ // use mocked datas
+        if(isMock){ // use mocked datas
             const resAverageSession = mockedDatas.USER_AVERAGE_SESSIONS.find((el)=>el.userId === userId);
+            console.log(`data mockées : ${isMock}`)
             return {data: resAverageSession}
         }
         // use api
         const resAverageSession = await hooksInstance.GetUserAverageSession(userId);
+        console.log(`data mockées : ${isMock}`)
         return resAverageSession.data;
     } catch (error) {
         console.error('Erreur lors de la récupération des sessions moyennes de l\'utilisateur:', error);
@@ -34,7 +37,7 @@ export const getUserAverageSessions = async (userId) => {
  */
 export const getUserInfo = async (userId) => {
     try {
-        if(USE_MOCK){ // use mocked datas
+        if(isMock){ // use mocked datas
             const resUser = mockedDatas.USER_MAIN_DATA.find((el)=>el.id === userId);
             return {data: resUser}
         }
@@ -55,7 +58,7 @@ export const getUserInfo = async (userId) => {
  */
 export const getUserPerformance = async (userId) => {
     try {
-        if(USE_MOCK){ // use mocked datas
+        if(isMock){ // use mocked datas
             const resPerf = await mockedDatas.USER_PERFORMANCE.find((el)=>el.userId === userId);
             return {data: resPerf};
         }
@@ -76,7 +79,7 @@ export const getUserPerformance = async (userId) => {
  */
 export const getUserActivity = async (userId) => {
     try {
-        if(USE_MOCK){ // use mocked datas
+        if(isMock){ // use mocked datas
             const resActivity = await mockedDatas.USER_ACTIVITY.find((el)=>el.userId === userId);
             return {data: resActivity}
         }

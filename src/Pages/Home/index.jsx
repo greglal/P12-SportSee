@@ -6,7 +6,7 @@ import DailyActivities from "../../Components/ActivitiesBarChart/barChart";
 import AverageSession from "../../Components/DurationLineChart/durationLineChart";
 import PerformanceChart from "../../Components/PerformanceRadarChart/performanceRadarChart";
 import ScoreChart from "../../Components/ScorePieChart/scorePieChart";
-import {useParams} from "react-router";
+import {useParams, useNavigate } from "react-router";
 import {getUserInfo} from "../../Services/CallAPi/api";
 import Counter from "../../Components/Counter/counter";
 import calories from "../../Assets/calories.png";
@@ -24,6 +24,7 @@ import fat from "../../Assets/fat.png";
 export default function Accueil() {
     const {id} = useParams();
     const useId = Number(id);
+    const navigate = useNavigate();
 
     // state declaration
     const [user, setUser] = useState(null);
@@ -37,7 +38,8 @@ export default function Accueil() {
                 const userInfo = await getUserInfo(useId);
                 setUser(userInfo);
             } catch (error) {
-                console.error('Erreur lors de la récupération des données utilisateur:', error)
+                console.error('Erreur lors de la récupération des données utilisateur:', error);
+                navigate('*');
             }
         };
         fetchData();
