@@ -1,3 +1,20 @@
+Projet sportSee
+
+SportSee est une startup dédiée au coaching sportif. 
+En pleine croissance, l’entreprise va aujourd’hui lancer une nouvelle version de la page profil de l’utilisateur.
+Cette page va notamment permettre à l’utilisateur de suivre le nombre de sessions réalisées ainsi que le nombre de calories brûlées.
+
+L’objectif est de refaire la page profil avec React.
+Le projet intègre des graphiques sur l’activité sportive de l’utilisateur.
+
+Développé avec:
+- React
+- Recharts
+- Style-components
+- Node-js
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
